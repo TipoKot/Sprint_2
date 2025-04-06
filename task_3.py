@@ -44,9 +44,9 @@ class TotalPoints(PointsForPlace, PointsForMeters):
     #   переменную total, которая суммирует значения методов get_points_for_place() и get_points_for_meters().
     # Метод возвращает переменную total.
     @staticmethod
-    def get_total_points(self, meters, place):
-        self.total = self.get_points_for_place(place) + self.get_points_for_meters(meters)
-        return self.total
+    def get_total_points(meters, place):
+        total = PointsForPlace.get_points_for_place(place) + PointsForMeters.get_points_for_meters(meters)
+        return total
 
 points_for_place = PointsForPlace()
 print(points_for_place.get_points_for_place(10))
